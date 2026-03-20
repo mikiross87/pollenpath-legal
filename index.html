@@ -479,11 +479,11 @@
     /* Weather */
     .sc-weather-grid { display: flex; gap: 12px; }
     .sc-weather-card { flex: 1; background: var(--surface); border-radius: var(--radius-md); border: 1px solid var(--border-subtle); padding: 14px; box-shadow: 0 4px 16px rgba(26,43,31,0.08); }
-    .sc-weather-icon { font-size: 18px; margin-bottom: 8px; display: block; }
-    .sc-weather-icon.temp { color: var(--accent); }
-    .sc-weather-icon.humid { color: var(--primary); }
-    .sc-weather-icon.wind { color: var(--secondary); }
-    .sc-weather-icon.press { color: var(--fg-muted); }
+    .sc-weather-svg { width: 20px; height: 20px; margin-bottom: 8px; display: block; }
+    .sc-weather-svg.temp { color: var(--accent); }
+    .sc-weather-svg.humid { color: var(--primary); }
+    .sc-weather-svg.wind { color: var(--secondary); }
+    .sc-weather-svg.press { color: var(--fg-muted); }
     .sc-weather-val { font-family: var(--font-display); font-size: 18px; font-weight: 700; color: var(--fg); }
     .sc-weather-lbl { font-size: 11px; color: var(--fg-muted); margin-top: 4px; }
     /* Weekly Trend */
@@ -956,10 +956,22 @@
         <!-- Weather Row -->
         <div class="showcase-card sc-weather">
           <div class="sc-weather-grid">
-            <div class="sc-weather-card"><span class="sc-weather-icon temp">&#x1F321;&#xFE0F;</span><div class="sc-weather-val">24°C</div><div class="sc-weather-lbl">Temperature</div></div>
-            <div class="sc-weather-card"><span class="sc-weather-icon humid">&#x1F4A7;</span><div class="sc-weather-val">62%</div><div class="sc-weather-lbl">Humidity</div></div>
-            <div class="sc-weather-card"><span class="sc-weather-icon wind">&#x1F4A8;</span><div class="sc-weather-val">12 km/h</div><div class="sc-weather-lbl">Wind</div></div>
-            <div class="sc-weather-card"><span class="sc-weather-icon press">&#x23F1;&#xFE0F;</span><div class="sc-weather-val">1014 hPa</div><div class="sc-weather-lbl">Pressure</div></div>
+            <div class="sc-weather-card">
+              <svg class="sc-weather-svg temp" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"/></svg>
+              <div class="sc-weather-val">24°C</div><div class="sc-weather-lbl">Temperature</div>
+            </div>
+            <div class="sc-weather-card">
+              <svg class="sc-weather-svg humid" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0L12 2.69z"/></svg>
+              <div class="sc-weather-val">62%</div><div class="sc-weather-lbl">Humidity</div>
+            </div>
+            <div class="sc-weather-card">
+              <svg class="sc-weather-svg wind" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17.7 7.7a2.5 2.5 0 1 1 1.8 4.3H2"/><path d="M9.6 4.6A2 2 0 1 1 11 8H2"/><path d="M12.6 19.4A2 2 0 1 0 14 16H2"/></svg>
+              <div class="sc-weather-val">12 km/h</div><div class="sc-weather-lbl">Wind</div>
+            </div>
+            <div class="sc-weather-card">
+              <svg class="sc-weather-svg press" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+              <div class="sc-weather-val">1014 hPa</div><div class="sc-weather-lbl">Pressure</div>
+            </div>
           </div>
         </div>
         <!-- Weekly Trend -->
