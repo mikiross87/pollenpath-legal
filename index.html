@@ -499,17 +499,34 @@
     .sc-trend-day { font-size: 10px; color: var(--fg-muted); }
     .sc-trend-day.today { color: var(--fg); font-weight: 600; }
     .sc-trend-bar.today-bar { outline: 2px solid var(--fg); outline-offset: -2px; }
-    /* Showcase responsive */
+    /* Showcase responsive — switch to flow layout on tablet and below */
     @media (max-width: 900px) {
-      .showcase { height: 520px; }
+      .showcase {
+        height: auto;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+      }
+      .showcase-card {
+        position: relative !important;
+        left: auto !important;
+        top: auto !important;
+        width: auto !important;
+        transform: none !important;
+        padding: 14px;
+      }
+      .showcase-card:hover { transform: translateY(-2px) !important; }
       .sc-pollen .sc-score { font-size: 48px; }
-      .showcase-card { padding: 14px; }
+      .sc-weather {
+        grid-column: 1 / -1;
+        background: none !important;
+        border: none !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+      }
     }
     @media (max-width: 600px) {
-      .showcase { height: auto; display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; }
-      .showcase-card { position: relative !important; left: auto !important; top: auto !important; width: calc(50% - 8px) !important; transform: none !important; }
-      .showcase-card:hover { transform: translateY(-2px) !important; }
-      .sc-weather { width: 100% !important; }
+      .showcase { grid-template-columns: 1fr; }
       .sc-pollen .sc-score { font-size: 40px; }
       .sc-today .sc-headline { font-size: 12px; }
       .sc-ai .sc-ai-body { font-size: 11px; }
