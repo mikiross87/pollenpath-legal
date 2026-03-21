@@ -57,11 +57,20 @@
     ]
   }
   </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet">
   <style>
+    /* ── Self-Hosted Fonts ── */
+    @font-face { font-family: 'Outfit'; src: url('/fonts/outfit-400.woff2') format('woff2'); font-weight: 400; font-display: swap; }
+    @font-face { font-family: 'Outfit'; src: url('/fonts/outfit-600.woff2') format('woff2'); font-weight: 600; font-display: swap; }
+    @font-face { font-family: 'Outfit'; src: url('/fonts/outfit-700.woff2') format('woff2'); font-weight: 700; font-display: swap; }
+    @font-face { font-family: 'Outfit'; src: url('/fonts/outfit-800.woff2') format('woff2'); font-weight: 800; font-display: swap; }
+    @font-face { font-family: 'DM Sans'; src: url('/fonts/dm-sans-300.woff2') format('woff2'); font-weight: 300; font-style: normal; font-display: swap; }
+    @font-face { font-family: 'DM Sans'; src: url('/fonts/dm-sans-400.woff2') format('woff2'); font-weight: 400; font-style: normal; font-display: swap; }
+    @font-face { font-family: 'DM Sans'; src: url('/fonts/dm-sans-500.woff2') format('woff2'); font-weight: 500; font-style: normal; font-display: swap; }
+    @font-face { font-family: 'DM Sans'; src: url('/fonts/dm-sans-600.woff2') format('woff2'); font-weight: 600; font-style: normal; font-display: swap; }
+    @font-face { font-family: 'DM Sans'; src: url('/fonts/dm-sans-700.woff2') format('woff2'); font-weight: 700; font-style: normal; font-display: swap; }
+    @font-face { font-family: 'DM Sans'; src: url('/fonts/dm-sans-300-italic.woff2') format('woff2'); font-weight: 300; font-style: italic; font-display: swap; }
+    @font-face { font-family: 'DM Sans'; src: url('/fonts/dm-sans-400-italic.woff2') format('woff2'); font-weight: 400; font-style: italic; font-display: swap; }
+    @font-face { font-family: 'Material Symbols Rounded'; src: url('/fonts/material-symbols-rounded.woff2') format('woff2'); font-display: swap; }
     /* ── Reset ── */
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -907,14 +916,14 @@
         <li><a href="privacy-policy.html">Privacy</a></li>
         <li><a href="terms-of-service.html">Terms</a></li>
       </ul>
-      <button class="nav-hamburger" aria-label="Open menu" onclick="document.getElementById('mobileMenu').classList.toggle('open')">
+      <button class="nav-hamburger" aria-label="Open menu">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
       </button>
       <a href="#pricing" class="nav-cta">Coming Soon</a>
     </nav>
     <div class="mobile-menu" id="mobileMenu">
-      <a href="#features" onclick="this.parentElement.classList.remove('open')">Features</a>
-      <a href="#pricing" onclick="this.parentElement.classList.remove('open')">Pricing</a>
+      <a href="#features">Features</a>
+      <a href="#pricing">Pricing</a>
       <a href="privacy-policy.html">Privacy</a>
       <a href="terms-of-service.html">Terms</a>
     </div>
@@ -1272,6 +1281,16 @@
       });
     }, { threshold: 0.15 });
     screenshotObs.observe(screenshotRow);
+
+    // Mobile menu toggle
+    const hamburger = document.querySelector('.nav-hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    if (hamburger && mobileMenu) {
+        hamburger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => mobileMenu.classList.remove('open'));
+        });
+    }
   </script>
 
 </body>
