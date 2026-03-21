@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 — PollenPath</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700&family=DM+Sans:opsz,wght@9..40,400;9..40,500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --bg: #FAF8F5; --fg: #1A2B1F; --fg-secondary: #5A6B5E;
+      --primary: #3A7D5C; --primary-fg: #FFFFFF;
+      --font-display: 'Outfit', sans-serif; --font-body: 'DM Sans', sans-serif;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #0F1A13; --fg: #E8F0EA; --fg-secondary: #9AB3A0; --primary: #5AAE7F; }
+    }
+    body {
+      font-family: var(--font-body); background: var(--bg); color: var(--fg);
+      min-height: 100vh; display: flex; align-items: center; justify-content: center;
+      text-align: center; padding: 2rem;
+    }
+    h1 { font-family: var(--font-display); font-size: clamp(3rem, 8vw, 5rem); font-weight: 700; line-height: 1.1; }
+    p { color: var(--fg-secondary); font-size: 1.125rem; margin-top: 0.75rem; }
+    a {
+      display: inline-block; margin-top: 2rem; padding: 0.875rem 2rem;
+      background: var(--primary); color: var(--primary-fg); text-decoration: none;
+      font-family: var(--font-display); font-weight: 600; font-size: 1rem;
+      border-radius: 100px; transition: opacity 0.2s;
+    }
+    a:hover { opacity: 0.85; }
+  </style>
+</head>
+<body>
+  <div>
+    <h1>404</h1>
+    <p>This page doesn't exist.</p>
+    <a href="/">Back to PollenPath</a>
+  </div>
+</body>
+</html>

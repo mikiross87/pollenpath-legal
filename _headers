@@ -1,0 +1,17 @@
+# ── Security Headers ──
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+
+# ── Cache Static Assets ──
+/img/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.ico
+  Cache-Control: public, max-age=31536000, immutable
+
+# ── Block Sensitive Path Probes ──
+# Cloudflare Pages returns index.html for unknown paths (SPA catch-all).
+# These headers won't fix the 200 status, but _redirects will.
